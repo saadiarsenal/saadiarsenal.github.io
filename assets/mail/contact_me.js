@@ -5,6 +5,12 @@ $(function () {
         preventSubmit: true,
         submitError: function ($form, event, errors) {
             // additional error messages or events
+            $("#success > .alert-danger").append(
+                $("<strong>").text(
+                    "Hey there" +
+                        ", it seems that you're missing something."
+                )
+            );
         },
         submitSuccess: function ($form, event) {
             event.preventDefault(); // prevent default submit behaviour
@@ -21,13 +27,13 @@ $(function () {
             $this = $("#sendMessageButton");
             $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
             $.ajax({
-                url: "/assets/mail/contact_me.php",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSd55s0aPjBU7I6Q_nOu27O78X7xXWx3FffpprRJfghl0mnI1Q/formResponse",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message,
+                    'entry.2005620554': name,
+                    'entry.1045781291': email,
+                    'entry.1166974658': phone,
+                    'entry.839337160': message,
                 },
                 cache: false,
                 success: function () {
