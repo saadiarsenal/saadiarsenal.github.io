@@ -1,14 +1,14 @@
 <?php
 // Check for empty fields
-if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+if(empty($_POST['entry.2005620554']) || empty($_POST['entry.1045781291']) || empty($_POST['entry.1166974658']) || empty($_POST['entry.839337160']) || !filter_var($_POST['entry.1045781291'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
   exit();
 }
 
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email = strip_tags(htmlspecialchars($_POST['email']));
-$phone = strip_tags(htmlspecialchars($_POST['phone']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
+$name = strip_tags(htmlspecialchars($_POST['entry.2005620554']));
+$email = strip_tags(htmlspecialchars($_POST['entry.1045781291']));
+$phone = strip_tags(htmlspecialchars($_POST['entry.1166974658']));
+$message = strip_tags(htmlspecialchars($_POST['entry.839337160']));
 
 // Create the email and send the message
 $to = "admin@nowyouknow.pk"; // Add your email address in between the "" replacing yourname@yourdomain.com - This is where the form will send a message to.
